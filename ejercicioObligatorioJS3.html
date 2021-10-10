@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Obligatorio Javascript 3</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingreso al Sistema</h1>
+
+    <form id="form">
+        <label for="usuario"><b>Usuario:</b></label>
+        <input type="text" name="usuario" id="user">
+        <br>
+        <label for="clave"><b>Clave:</b></label>
+        <input type="password" name="clave" id="clave">
+        <br>
+        <button type="submit"  id="btn">Ingresar</button>
+    </form>
+    
+
+    <script>
+        var form = document.getElementById("form");
+        var usuario = document.getElementById("user");
+        var clave = document.getElementById("clave");
+
+        form.onsubmit = function checkInput(e){
+
+            if(!(usuario.value.includes('@'))){
+                e.preventDefault();
+                alert("El usuario debe incluir un @");
+            }else if(clave.value == ""){
+                e.preventDefault();
+                alert("El espacio de clave no puede estar vacio");
+            }
+            else{
+                alert("Enviado con éxito!");
+            }
+        }
+
+    </script>
+</body>
+</html>
